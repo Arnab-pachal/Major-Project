@@ -1,0 +1,160 @@
+body{
+    font-family: "Plus Jakarta Sans", "sans-serif" !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex:1;
+}
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    color:#fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-links,.f-info-socials{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-left: 1em;
+    margin-right: 1rem;
+}
+.f-info{
+text-align:center ;
+height: 8rem;
+background-color: #ebebeb;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: space-evenly;}
+
+.f-info-brands{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.listing-card{border: none !important;
+margin-bottom: 2rem;
+
+}
+
+.card-img-top{border-radius: 1rem !important;
+object-fit: cover !important;}
+
+.card-body{padding: 0 !important;}
+.card-text{
+    font-weight: 400 !important;
+}
+.title{
+    text-decoration: none;
+
+}
+.new{display: flex;
+justify-content: space-evenly;}
+
+.card-img-overlay{opacity: 0;}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.add-btn{
+    background-color: #fe424d!important;
+    border: none !important;
+    opacity: 0.8;
+
+}
+.btn:hover{opacity: 1;}
+.edit-btn{
+    background-color: #fe424d!important;
+    border: none !important;
+    opacity: 0.8;
+}
+/* Showpage */
+.show-img{
+    height: 30vh;
+}
+.show-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card-text{display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+text-align: center;}
+.show-btn{
+    width: 50%;
+    height: 60px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.review-card{
+    height:200px;
+    text-align: center !important;
+     
+    }
+    #filters{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        position :fixed;
+        background-color: rgb(255, 255, 255);
+        z-index: 10;
+        width: 100%;
+        margin-left:-70px;
+        padding: 0;
+        margin-bottom: 20px;
+
+      }
+      .filter{
+        text-align: center;
+        margin-right:2rem;
+        margin-top: 2rem;
+        opacity: 0.7;
+      }
+      .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+      }
+      .filter p{
+        font-size: 0.8rem;
+      }
+      .tax-switch{
+        text-align: center;
+        height: 3.25rem;
+        margin-right:2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.7;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+      }
+      .tax{display: none;}

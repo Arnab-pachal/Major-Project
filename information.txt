@@ -1,0 +1,12 @@
+//3rd party app provides URL link 
+from which we can access the link which can be stored in mongodb
+
+user --> 3rd party app --> produce link --> store in mongodb
+
+atlas username :- arnabpachal2004
+atlas password :- Gfi4aX3mJ27wc2kX
+
+databse link :-
+mongodb+srv://arnabpachal2004:Gfi4aX3mJ27wc2kX@cluster0.x2mbfij.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+pass:- mTomz7CUr4wAiEhk
