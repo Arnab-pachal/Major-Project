@@ -1,8 +1,8 @@
 <% layout("layouts/boilerplate.ejs") %>
 <body>
-    <div class="row">
-        <div class="col-8 offset-2 show-div">
-        <h3><%=listing.title %></h3>
+    <div class="row reviewpage">
+        <div class="col-8 offset-2 show-div  row-cols-md-2">
+          <h3 class="col-8 offset-4"><%=listing.title %></h3>
     <div class="card show-card" style="width: 18rem; margin: 0.5rem; ">
         <img src="<%=listing.image.url %>" class="card-img-top show-img" alt="listing_image">
         <div class="card-body">
@@ -23,7 +23,7 @@
     </div>
     <hr>
     <%}%>
-    <div class="col-8 offset-2 mt-3 mb-3">
+    <div class="col-8 offset-1 mt-3 mb-3 reviewclass">
     
       <% if(currUser) { %>
       <h4>Leave a Review</h4>
@@ -66,9 +66,9 @@
       <%}%>
       <hr>
       <p><b>All Reviews</b><p>
-        <div class="row">
+        <div class="row reviewrow">
           <% for( review of listing.reviews){%>
-            <div class="card review-card mb-2 mt-2 col-5 ms-2 ">
+            <div class="card review-card mb-2 mt-2 col-5 ms-2 reviewcard ">
                <div class="card-body">
                
                  <h5 class="card-title " style="text-align: start; padding-top: 0.5rem;">
