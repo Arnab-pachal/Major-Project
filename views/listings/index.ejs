@@ -1,56 +1,66 @@
 <% layout("layouts/boilerplate.ejs") %>
-        
-      <div id="filters">
-          <div class="filter">
+<style>
+  .filter{
+    opacity: 1;
+  }
+</style>
+
+      <div id="filters" class="scroll">
+          <div class="filter" style="opacity: 1;">
              <div><i class="fa-solid fa-fire"></i></div>
               <p>Trending</p>
           </div>
-          <div class="filter">
+          <div class="filter"style="opacity: 1;">
             <div><i class="fa-solid fa-house"></i></div>
              <p>Rooms</p>
          </div>
-         <div class="filter">
+         <div class="filter" style="opacity: 1;">
           <div><i class="fa-solid fa-mountain-city"></i></div>
            <p>Iconic cities</p>
        </div>
-       <div class="filter">
+       <div class="filter" style="opacity: 1;">
          <div><i class="fa-solid fa-mountain"></i></div>
           <p>Mountains</p>
       </div>
-      <div class="filter">
+      <div class="filter" style="opacity: 1;">
         <div><i class="fa-brands fa-fort-awesome"></i></div>
          <p>Castles</p>
      </div>
-     <div class="filter">
+     <div class="filter" style="opacity: 1;">
        <div><i class="fa-solid fa-person-swimming"></i></div>
         <p>Amazing pool</p>
      </div>  
-        <div class="filter">
+        <div class="filter" style="opacity: 1;">
           <div><i class="fa-solid fa-campground"></i></div>
            <p>Camping</p>
        </div>
-       <div class="filter">
+       <div class="filter" style="opacity: 1;">
          <div><i class="fa-solid fa-tractor"></i></div>
           <p>farms</p>
       </div>
-      <div class="filter">
+      <div class="filter" style="opacity: 1;">
         <div><i class="fa-regular fa-snowflake"></i></div>
          <p>Arctic</p>
       </div>
-      <div class="filter">
+      <div class="filter" style="opacity: 1;">
         <div><i class="fa-solid fa-landmark-dome"></i></div>
          <p>Domes</p>
       </div>
-      <div class="tax-switch">
-        <div class="form-check form-switch form-check-reverse">
+      <div class="tax-switch" style="z-index: 10;position: fixed;top:160px;opacity: 1; ">
+        <div class="form-check form-switch form-check-reverse check" style="opacity: 1;">
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
           <label class="form-check-label" for="flexSwitchCheckChecked">Display total before taxes</label>
         </div>
       </div>
     </div>
+
+     
+    
+    
+    
    <hr>
    
-    <div class=" row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 new" style="padding-top: 5rem;" >
+    <div class=" row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 new" style="padding-top: 150px;" >
      
         <% for(let listing of allListing){%>
             <a href="/listings/<%=listing._id%>" class="title">
@@ -81,6 +91,32 @@
         
        }
       })
+   
+    document.addEventListener('DOMContentLoaded', function () {
+        let navbarToggler = document.querySelector('.navbar-toggler');
+
+          
+        let filters = document.querySelector('#filters');
+        
+        let filter = document.querySelectorAll('.filter');
+         
+        
+
+        navbarToggler.addEventListener('click', function () {
+       const allfilter = document.querySelectorAll('.filter');
+       const tax = document.querySelector('.tax-switch');
+      
+       for(let all of allfilter){
+        if(all.style.opacity==1){all.style.opacity=0;}
+        else{all.style.opacity=1;}
+       }
+      if(tax.style.opacity==1){tax.style.opacity=0;}
+      else{tax.style.opacity=1;}
+
+       
+    });
+    });
+
     </script>
 
 
