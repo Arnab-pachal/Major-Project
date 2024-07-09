@@ -20,6 +20,7 @@ const listingSchema = new Schema({
             ref:"Review",
         },
     ],
+    specific : String,
     owner:{
         type:Schema.Types.ObjectId,
         ref:"User",

@@ -5,6 +5,27 @@ module.exports.index = async (req,res)=>{
     let allListing=await Listing.find({});
    res.render("listings/index.ejs",{allListing});
   }
+module.exports.filter=async(req,res)=>{
+    try {
+        // Extract the `q` parameter from the URL
+        const { q } = req.params;
+    
+        // Check if `q` is a valid string
+        if (!q || typeof q !== 'string') {
+          return res.status(400).send('Invalid filter query.');
+        }
+    
+        // Find all listings where `specific` matches the filter query
+        const allListing = await Listing.find({ specific: q });
+    
+        // Render the results to the specific.ejs template
+        res.render('listings/specific.ejs', { allListing });
+      } catch (error) {
+        console.error('Error fetching listings:', error);
+        res.status(500).send('An error occurred while fetching the listings.');
+      }
+    
+}  
 module.exports.rendernewForm = async(req,res)=>{
     res.render("listings/new.ejs");
 }
@@ -22,7 +43,7 @@ module.exports.show = async(req,res)=>{
 module.exports.create = async(req,res,next)=>{
    let url=req.file.path;
    let filename = req.file.filename;
-     
+   console.log(req.body.listing);  
     const listing = new Listing(req.body.listing);
     listing.owner = req.user._id;
     listing.image={url,filename};
