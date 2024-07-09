@@ -1,0 +1,44 @@
+<% layout("layouts/boilerplate.ejs") %>
+
+<div>
+    <div class="tax-switch" style="z-index: 10;opacity: 1; ">
+        <div class="form-check form-switch form-check-reverse check" style="opacity: 1;">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+          <label class="form-check-label" for="flexSwitchCheckChecked">Display total before taxes</label>
+        </div>
+      </div>
+</div>
+
+   
+<div class=" row row-cols-lg-3 row-cols-md-2 row-cols-sm-1  new" style="padding: top 15px;" >
+ 
+    <% for(let listing of allListing){%>
+        <a href="/listings/<%=listing._id%>" class="title">
+            <div class="card col listing-card" style=" margin: 1rem;margin-bottom: 2rem;">
+                <img src="<%=listing.image.url%>" class="card-img-top" alt="listing-image" style="height:20rem;width: 20rem;">
+                <div class="card-img-overlay"><%=listing.title%></div>
+                <div class="card-body">
+                  <p class="card-text" style="text-align: center;" >
+                    <b><%= listing.title %></b>
+                    <div style="display: flex;justify-content: center;">
+                      &#8377;<%=listing.price.toLocaleString("en-IN")%>/night
+                      <i class="tax"> &nbsp; &nbsp;+18% GST</i>
+                    </div>
+                     
+                  </p>
+                </div>
+            </div>
+    <%}%>
+</div>
+<script>
+    let tagSwtich = document.getElementById("flexSwitchCheckChecked");
+    tagSwtich.addEventListener("click",()=>{let tax= document.getElementsByClassName("tax");
+     for(info of tax){
+      if(info.style.display!="inline"){info.style.display="inline";}
+
+      else{info.style.display="none";}
+      
+     }
+    })
+  
+  </script>
