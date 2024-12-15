@@ -15,7 +15,7 @@ router.route("/")
   .post(isLogin, upload.single('listing[image]'), validateListing, wrapAsync(create));  // Create a new listing
 
 // New route: Render the form for creating a new listing
-
+router.get("/new", isLogin, wrapAsync(rendernewForm));
 // Filter route: Filter listings based on a specific criterion
 router.get("/:q/filter", isLogin, wrapAsync(filter));  // Note: Add validation for 'q' if needed
 
@@ -27,6 +27,6 @@ router.route("/:id")
 
 // Edit route: Render the form for editing a specific listing
 router.get("/:id/edit", isLogin, owner, wrapAsync(edit));  // Ensure the owner middleware validates the listing ownership
-router.get("/new", isLogin, wrapAsync(rendernewForm));
+
 
 module.exports = router;
