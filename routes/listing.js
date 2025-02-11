@@ -4,7 +4,7 @@ const wrapAsync = require("../utils/wrapAsync.js");
 
 const passport = require("passport");
 const { isLogin, owner, validateListing } = require("../middleware.js");
-const { index, rendernewForm, show, create, edit, update, Delet, filter } = require("../controllers/listings.js");
+const { index, rendernewForm, show, create, edit, update, Delet, filter,search } = require("../controllers/listings.js");
 const multer = require('multer');
 const { storage } = require("../cloudConfig.js");
 const upload = multer({ storage });
@@ -17,7 +17,8 @@ router.route("/")
 // New route: Render the form for creating a new listing
 router.get("/new", isLogin, wrapAsync(rendernewForm));
 // Filter route: Filter listings based on a specific criterion
-router.get("/:q/filter", isLogin, wrapAsync(filter));  // Note: Add validation for 'q' if needed
+router.get("/:q/filter", isLogin, wrapAsync(filter));  
+router.get("/search", isLogin, wrapAsync(search));  // Note: Add validation for 'q' if needed
 
 // Show, Edit, Update, and Delete routes for a specific listing
 router.route("/:id")

@@ -81,3 +81,18 @@ module.exports.Delet = async(req,res)=>{
       res.redirect('/listings');
 
 }
+module.exports.search= async(req,res)=>{
+  const title = req.query.title;
+  console.log(title)
+  const allList = await Listing.find({
+    $or: [
+      { title: title },
+      { country: title },
+      { location: title }
+    ]
+  });
+  
+  console.log(allList);
+  res.render("listings/index.ejs",{allListing:allList});
+
+}
