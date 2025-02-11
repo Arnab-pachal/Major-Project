@@ -72,11 +72,11 @@
 
 <hr>
 
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 new" style="padding-top: 150px;">
+<div class="row row-cols-lg-3 row row-cols-xl-3 row-cols-md-2 row-cols-sm-1 mt-3 new" style="padding-top: 150px;">
   <% for(let listing of allListing) { %>
     <a href="/listings/<%= listing._id %>" class="title">
-      <div class="card col listing-card" style="margin: 1rem; margin-bottom: 2rem;">
-        <img src="<%= listing.image.url %>" class="card-img-top" alt="listing-image" style="height:20rem; width: 20rem;">
+      <div class="card col listing-card" style=" margin-bottom: 2rem; ">
+        <img src="<%= listing.image.url %>" class="card-img-top" alt="listing-image" style="height:20rem; width:100%;">
         <div class="card-img-overlay"><%= listing.title %></div>
         <div class="card-body">
           <p class="card-text" style="text-align: center;">

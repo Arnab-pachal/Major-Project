@@ -37,8 +37,22 @@ module.exports.show = async(req,res)=>{
         req.flash("error","Listing You Requested For Does Not Exist");
         res.redirect("/listings");
     }
+    const apiKey = '442b8befaf604d5e8f8561187aa7412a';
+    let location =listing.location;
+   let lat=""
+    let lng=""
+    await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${location}&key=${apiKey}`)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+     lat = data.results[0].geometry.lat;
+    lng = data.results[0].geometry.lng;
+    
+  
+  })
+ 
     console.log(listing);
-    res.render("listings/show.ejs",{listing});
+    res.render("listings/show.ejs",{listing,lat,lng});
 };
 module.exports.create = async(req,res,next)=>{
    let url=req.file.path;

@@ -69,7 +69,9 @@ object-fit: cover !important;}
 
 }
 .new{display: flex;
-justify-content: space-evenly;}
+justify-content: space-evenly;
+margin:10px;
+}
 
 .card-img-overlay{opacity: 0;}
 .card-img-overlay:hover{
